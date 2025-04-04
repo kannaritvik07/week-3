@@ -1,0 +1,16 @@
+def print_list(elements):     
+    for element in elements:
+        print(element)  
+
+def largest(elements):
+    for i in elements :
+        largest=0
+        largest=max(largest,i)
+    print("largest=",largest)
+limit = int(input("Enter the length of the list: "))
+elements = []  
+for i in range(limit):
+    temp = int(input(f"Enter number {i+1}: "))
+    elements.append(temp)
+print_list(elements)
+largest(elements)

@@ -1,0 +1,39 @@
+def credit(amount, balance):
+    balance = balance + amount
+    return balance, f"Credited: {amount}"
+
+def debit(amount, balance):
+    balance = balance - amount
+    return balance, f"Debited: {amount}"
+
+def show_balance(balance):
+    print("Current balance:", balance)
+
+def show_last_transaction(last_transaction):
+    if last_transaction:
+        print("Last transaction:", last_transaction)
+    else:
+        print("No transaction made yet.")
+
+balance = int(input("Enter the initial balance: "))
+last_transaction = None  
+
+while True:
+    amount = int(input("Enter the amount to be credited or debited: "))
+    sys = int(input("Press 1 to credit\nPress 2 to debit\nPress 3 to exit\n"))
+
+    if sys == 1:
+        balance, transaction = credit(amount, balance)
+        last_transaction = transaction
+        show_balance(balance)
+        show_last_transaction(last_transaction)
+    elif sys == 2:
+        balance, transaction = debit(amount, balance)
+        last_transaction = transaction
+        show_balance(balance)
+        show_last_transaction(last_transaction)
+    elif sys == 3:
+        print("Exiting the program.")
+        break
+    else:
+        print("Invalid option. Please try again.")

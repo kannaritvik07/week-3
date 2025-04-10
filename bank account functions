@@ -14,8 +14,8 @@ balance=int(input("enter the amount"))
 amount=int(input("enter the amount to be credited or debited"))
 sys=int(input("press 1 to credit\npress 2 to debit"))
 if(sys==1):
-        balance=cridit(amount,balance)
-        show_balance()
+        balance=credit(amount,balance)
+        show_balance(balance)
 if(sys==2):
         balance=debit(amount,balance)
         show_balance(balance)
